@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(isset($_POST["username"]) && isset($_POST["password"]) && !isset($_SESSION["username"])) {
-        $conn=mysqli_connect("localhost", "root", "", "hw1");
+        $conn=mysqli_connect("localhost", "root", "", "index");
         $username=mysqli_real_escape_string($conn, $_POST["username"]);
         $password=mysqli_real_escape_string($conn, $_POST["password"]);
         $annoacc=mysqli_real_escape_string($conn, $_POST["annoacc"]);
@@ -12,7 +12,7 @@
             if (password_verify($password, $entry['pass'])) {
                 $_SESSION["username"] = $entry['username'];
                 $_SESSION["annoacc"] = $annoacc;
-                header("Location: hw1.php");
+                header("Location: index.php");
                 exit();
             } else {
                 $errore=true;
@@ -32,13 +32,13 @@
         <title>
             Studium UniCT
         </title>
-        <link rel="stylesheet" href="hw1.css">
+        <link rel="stylesheet" href="index.css">
         <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
         <link href="https://fonts.cdnfonts.com/css/coolvetica" rel="stylesheet">
         <link rel="shortcut icon" href="./img/studium.png" type="image/x-icon">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="hw1.js" defer></script>
+        <script src="index.js" defer></script>
     </head>
     
 
@@ -52,7 +52,7 @@
                         <div></div>
                         <div></div>
                     </span>
-                    <a href="hw1.php" id="home" data-string="Torna alla home page">
+                    <a href="index.php" id="home" data-string="Torna alla home page">
                         <img id=loghino src="img/unict-logo2.png">
                         <span id="logone"><h1 id="studiumlogo">Studium UniCT</h1> </span>
                     </a>

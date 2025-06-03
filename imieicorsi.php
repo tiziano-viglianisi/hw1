@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(!isset($_SESSION["username"]) || $_SESSION["username"] === "") {
-        header("Location: hw1.php");
+        header("Location: index.php");
         exit();
     }
 ?>
@@ -25,7 +25,7 @@
     <body>
         <div id="wrapper">
             <div id="header">
-                <a href="hw1.php" id="home" data-string="Torna alla home page">
+                <a href="index.php" id="home" data-string="Torna alla home page">
                     <img id=loghino src="img/unict-logo2.png">
                     <span id="logone"><h1 id="studiumlogo">Studium UniCT</h1> </span>
                 </a>

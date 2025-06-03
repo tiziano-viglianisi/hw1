@@ -3,6 +3,6 @@
     if (isset($_SESSION['username'])) {
         session_destroy();
     }
-    header("Location: hw1.php");
+    header("Location: index.php");
     exit();
 ?>

@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(isset($_POST["username"]) && isset($_POST["password"]) && !isset($_SESSION["username"])) {
-        $conn=mysqli_connect("localhost", "root", "", "index");
+        $conn=mysqli_connect("localhost", "root", "", "hw1");
         $username=mysqli_real_escape_string($conn, $_POST["username"]);
         $password=mysqli_real_escape_string($conn, $_POST["password"]);
         $annoacc=mysqli_real_escape_string($conn, $_POST["annoacc"]);

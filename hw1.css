@@ -1,0 +1,728 @@
+html{
+    color: #424242;
+    font-family: "roboto-flex",sans-serif;
+    font-size: 12px;
+}
+
+@media (max-width: 1100px) {
+    html {
+      font-size:10px;
+    }
+}  
+
+
+body{
+    margin:0;
+    padding:0;
+    background-color:#efefef;
+}
+
+
+.hidden{
+    display: none !important;
+}
+
+#wrapper{
+    height: auto;
+    min-height: 100%;
+    background-color: #0078BD;
+}
+
+#header{
+    display:flex;
+    justify-content: space-between;
+    background-image: radial-gradient(circle at left, #4e9bc7, #0078BD, #FFFF66, #4e9bc7);
+    font-family: "roboto-flex",sans-serif;
+    font-size: 12px;
+    height: 96px;
+    width: 100%;
+}
+
+#menuutente{
+    display: flex;
+    align-items: center; 
+    justify-content: left;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 150%;
+    font-weight: bold;
+    color: #FFFF66;
+    height: 92%;
+    width:75%;
+}
+
+.facoltadivstyle{
+    color: #FFFF66;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: #4e9bc7;
+    text-shadow: none;
+    padding: 2%;
+}
+
+.flexcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.userbuttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100%;
+    text-align: center;
+    height: 95%;
+    border-left: 1px solid #FFFF66;
+    padding-left: 1%;
+    padding-right:1%;
+    text-decoration: none;
+}
+
+.userbuttons:visited {
+    color: inherit;
+}
+
+#logout {
+    display: flex;
+    align-items: center; 
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 150%;
+    font-weight: bold;
+    color: white;
+    height: 100%;
+    width:10%;
+}
+
+#scrittalogout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    font-size: 100%;
+    text-align: center;
+    color: #FFFF66
+}
+
+@media (max-width: 1100px) {
+    #header
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+#burger {
+    display: none;
+}
+    
+#burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 2.5px 2.5px;
+    cursor:pointer;
+}
+@media (max-width: 1100px) {
+    #burger
+    {
+        display: flex;
+        justify-content: center;
+        width:30px;
+        flex-direction: column;
+        margin-left: 5px;
+    }
+}
+
+#home{
+    display:flex;
+    width: 15%;
+    height:100%;
+    text-decoration: none;
+    color: black;
+}
+
+@media (max-width: 1100px) {
+    #home
+    {
+        width:25%;
+    }
+}
+  
+  #loghino{
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 80px;
+    height: 80px;
+    margin-left: 5px;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    background-color: #b8e3f0;
+    border: 4px solid white;
+    text-align: center;
+  }
+
+@media (max-width: 600px) {
+    #loghino
+    {
+        border-radius: 50%;
+    }
+}
+@media (max-width: 1100px) {
+    #scrittaprofilo {
+        display: none;
+    }
+}
+
+@media (max-width: 1100px) {
+    #scrittalogout {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    #logone
+    {
+        display: none !important;
+    }
+}
+
+
+
+#logone{
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    border: 4px solid white;
+    font-family: "coolvetica", sans-serif;
+    font-size: 15px;
+    border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#banner{
+    display: flex;
+    justify-content:space-between;
+    height: 140px;
+    margin: auto;
+    background-color: white;
+}
+#studiumlogo{
+    font-weight: normal;
+}
+
+@media (max-width: 1100px) {
+    #banner {
+        height:70px;  
+    }
+}
+  
+
+#main{
+    display:flex;
+}
+
+#content{
+    display:flex;
+    min-height: 1200px;
+    min-width: 100vw;
+    background-color: #FFFFFF;
+    padding:0px;
+    align-items: start;
+}
+
+@media (max-width: 1100px) {
+    #content {
+      width: 100%;
+    }
+}
+  
+
+
+.menu{
+    background-color:#4e9bc7;
+    font-size:160%;
+    width: 15%;
+    float: left;
+    min-height: 100%;
+    padding:5px;
+}
+
+@media (max-width: 1100px) {
+    .menu {
+      display:none;
+    }
+}
+
+
+#menutendina{
+    position:absolute;
+    width:70%;
+    float: left;
+    padding:10px;
+    border: 2px solid #4e9bc7;
+    background-color: #4e9bc7;
+    border-top-right-radius: 3%;
+    border-bottom-right-radius: 3%;
+    z-index: 10;
+    min-height: 100%;
+    overflow: auto !important;
+}
+
+.no_scroll{
+    overflow: hidden;
+}
+    
+@media (min-width: 1100px) {
+    #menutendina {
+        display:none;
+    }
+}
+    
+@media (max-width: 600px) {
+    #menutendina {
+        min-height:100%;
+        font-size: 1.8em;
+    }
+}
+#studiumimage{
+    width:50px;
+    height:50px;
+    margin-left: 5px;
+}
+
+.group{
+    margin-bottom: 6%;
+    width:99%;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding:2px;
+}
+
+.anno_accademico_group{
+    margin-bottom: 6%;
+    background-color: #4e9bc7;
+    width:100%;
+    padding-bottom: 3px;
+    height:9%;
+}
+
+.anno_accademico{
+    font-family: 'Roboto Condensed', sans-serif;
+    color:#FFFF66;
+    display: block;
+    font-size: 130%;
+    font-weight: bold;
+    margin-left: 5px;
+    border-bottom: 1px solid rgb(200,200,200);
+}
+
+.anno_accademico_value{
+    background-color: #fff;
+    border: 1px solid #b8b8b6;
+    color: #333;
+    border-radius: 5px;
+    margin-left: 10px;
+    padding: 3px;
+    width:95%;
+    max-height:26px;
+}
+
+
+.accesso_utenti{
+    font-family: 'Roboto Condensed', sans-serif;
+    color:#FFFF66;
+    font-size: 130%;
+    font-weight: bold;
+    margin-bottom: 7px;
+    margin-left: 5px;
+    margin-top: 10px;
+    border-bottom: 1px solid rgb(200,200,200);
+}
+
+.login{
+    font-weight: bold;
+    padding-left: 10px;
+}
+.nome_utente-passw{
+    color:#eaeaea;
+    font-size:11px;
+    margin-bottom: 4px;
+    display: inline-block;
+    width: 40%;
+}
+
+
+.casella{
+    display: inline-block;
+    margin-bottom: 5px;
+    border: 1px solid #b8b8b6;
+    border-radius: 5px;
+    color: #333;
+    padding-left: 3px;
+    background-color: white;
+    width: 55%;
+    height: 25px;
+}
+
+.flex_entra{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.signup{
+    font-family: 'Roboto Condensed', sans-serif;
+    color:#FFFF66;
+    font-size: 100%;
+    font-weight: bold;
+    margin-bottom: 7px;
+    margin-left: 5px;
+    text-align: center;
+}
+
+.entra{
+    margin-top: 8px;
+    margin-bottom: 8px;
+    text-align: center;
+    cursor: pointer;
+    background-color: transparent;
+    border:none;
+}
+
+.in_evidenza{
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', sans-serif;
+    color:#FFFF66;
+    display: block;
+    font-size: 130%;
+    font-weight: bold;
+    margin-bottom: 7px;
+    margin-left: 5px;
+    border-bottom: 1px solid rgb(200, 200, 200);
+}
+
+.evidence_box{
+    margin-bottom:5%;
+    padding:7px;
+    
+}
+
+.arrowr{
+    display: inline;
+}
+
+.list1{
+    list-style-type: none;
+    margin-left: 0px;
+    padding: 2px;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 90%;
+    display: inline-block;
+    color: #e3e3e3;
+}
+
+.logocnt{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+}
+
+
+.mktlogo {
+    height: 40px;
+    width: 150px;
+}
+
+
+.actions{  
+    background-color: #fff;
+    background: -moz-linear-gradient(center top, #eaeaea, #FFFFFF);
+    border: 1px solid #b8b8b6;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding: 10px;
+    vertical-align: middle;
+    clear: both;
+}
+
+.pref{
+    vertical-align: middle;
+    width: 30px;
+    height : 30px;
+    cursor: pointer;
+}
+
+#content_with_menu{
+    position: relative;
+    width: 85%;
+    text-transform: uppercase;
+    font-size:15px;
+    background-image: url("img/Ingegneria Edificio didattica 03.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+@media (max-width: 1100px) {
+    #content_with_menu {
+      width: 100%;
+    }
+}
+
+.tablet_title{
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #FFFF66;
+    display: block;
+    font-size: 130%;
+    font-weight: bold;
+    margin-bottom: 7px;
+    margin-left: 5px;
+    border-bottom: 1px solid rgb(200, 200, 200);
+}
+
+.mininav{
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #FFFF66;
+    display: block;
+    font-size: 180%;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 7px;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+    background-color: #0078BD;
+}
+
+@media (max-width: 1100px) {
+    .mininav {
+      margin: 0;
+    }
+}
+
+#sceltamininav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0078BD;
+    border-radius: 5%;
+    column-gap: 1%;
+}
+
+#browse{
+    cursor: pointer;
+}
+
+#libri{
+    cursor: pointer;
+}
+
+@media (max-width: 1100px) {
+    .mininav{
+      font-size: 180%;
+    }
+}
+.searching{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #4e9bc7;
+    background-color: #4e9bc7;
+}
+
+.search{
+    cursor: pointer;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
+}
+
+#searchbar{
+    font-size: 85%;
+    margin-left:1%;
+    width: 250px;
+    height: 30px;
+    outline:none;
+    background-color: #4e9bc7;
+    color:#eaeaea;
+    padding-left:3px;
+    box-shadow: none;
+    border: none;
+    border-bottom: 2px #e3e3e3 solid;
+    
+}
+::placeholder{
+    color: #eaeaea;
+    opacity: 0.5;
+}
+
+.backbutton{
+    float:left;
+    cursor: pointer;
+}
+
+.box{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 3%;
+    flex-wrap: wrap;
+    align-items: start;
+    column-gap: 5%;
+}
+
+
+
+#welcome{
+    display: flex;
+    height: calc(100% - 65px);
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+@media (max-width: 600px) {
+    #welcome {
+      height: 100vh;
+    }
+}
+
+#benvenuto{
+    background-color: #0078BD;
+    color:#FFFF66;
+    font-size: 300%;
+    font-weight: bold;
+    padding: 2%;
+    text-align: center;
+    width:100%;
+}
+
+
+
+@media(max-width:1100px){
+    #flexContainerFacolta div{
+        width:100%;
+        font-size:1em;
+    }
+}
+
+@media(max-width:1100px){
+    #flexContainerMaterie span{
+        width:100%;
+        font-size: 1em;
+    }
+}
+
+
+.listd1{
+    text-transform: uppercase;
+    list-style-type: none;
+    margin-left: 0px;
+    margin-top: 2%;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 130%;
+    text-align: center;
+    color: #eaeaea;
+    text-shadow: 2px 2px 2px #000000;
+}
+
+.listd1 img{
+    width: 200px;
+    border-radius: 25%;
+    margin-bottom: 2%;
+}
+
+@media (max-width: 1100px) {
+    .listd1 img{
+      height: 100px;
+      width: 100px;
+    }
+}
+
+
+.clear{
+    clear: both;
+    line-height: 0px;
+    height: 0;
+}
+
+#footer{
+    position: relative;
+    bottom:0px;
+    display:flex;
+    margin: auto;
+    background-color: #0078BD;;
+    color:black;
+    justify-content: space-between;
+    align-items:end;
+    font-family: roboto-flex,sans-serif;
+    height: 80px;
+}
+
+
+@media (max-width: 1100px) {
+    #footer {
+      height:100px;
+    }
+}
+
+
+.propic{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: 2px solid #FFFF66;
+    background-color: #FFFF66;
+    margin-left: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#profiliutente{
+    margin-left:auto;
+}
+
+.book_cover{
+    width: 200px;
+    height: 200px;
+}
+.book_info{
+    font-size: 0.9em;
+}
+.listl1{
+    text-transform: uppercase;
+    list-style-type: none;
+    margin-left: 0px;
+    margin-top: 2%;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    color: #eaeaea;
+    text-shadow: 2px 2px 2px #000000;
+}

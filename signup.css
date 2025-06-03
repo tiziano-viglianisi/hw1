@@ -1,0 +1,355 @@
+html{
+    color: #e3e3e3;
+    font-family: "roboto-flex",sans-serif;
+    font-size: 12px;
+}
+
+@media (max-width: 1100px) {
+    html {
+      font-size:10px;
+    }
+}  
+
+
+body{
+    margin:0;
+    padding:0;
+    background-color:#efefef;
+}
+
+
+.hidden{
+    display: none !important;
+}
+
+#wrapper{
+    height: auto;
+    min-height: 100%;
+}
+
+#header{
+    display:flex;
+    justify-content: space-between;
+    background-image: radial-gradient(circle at left, #4e9bc7, #0078BD, #FFFF66, #4e9bc7);
+    font-family: "roboto-flex",sans-serif;
+    font-size: 12px;
+    height: 96px;
+    width: 100%;
+}
+
+#menuutente{
+    display: flex;
+    align-items: center; 
+    justify-content: left;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 150%;
+    font-weight: bold;
+    color: #FFFF66;
+    height: 92%;
+    width:75%;
+}
+
+
+@media (max-width: 1100px) {
+    #header
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+#home{
+    display:flex;
+    width: 15%;
+    height:100%;
+    text-decoration: none;
+    color: black;
+}
+
+@media (max-width: 1100px) {
+    #home
+    {
+        width:25%;
+    }
+}
+@media (max-width: 600px) {
+    #home
+    {
+        margin-right: 25%;
+    }
+}
+  
+  #loghino{
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 80px;
+    height: 80px;
+    margin-left: 5px;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    background-color: #b8e3f0;
+    border: 4px solid white;
+    text-align: center;
+  }
+
+#logone{
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    border: 4px solid white;
+    font-family: "coolvetica", sans-serif;
+    font-size: 15px;
+    border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#banner{
+    display: flex;
+    justify-content:space-between;
+    height: 140px;
+    margin: auto;
+    background-color: white;
+}
+#studiumlogo{
+    font-weight: normal;
+}
+
+@media (max-width: 1100px) {
+    #banner {
+        height:70px;  
+    }
+  }
+  
+#img1{
+    width: 20%;
+}
+
+
+#main{
+    display:flex;
+    align-items: center;
+    background-image: url("img/Ingegneria Edificio didattica 03.jpg");
+}
+
+#content{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    min-height: 1000px;
+    width: 50%;
+    background-color: #4e9bc7;
+    padding:0px;
+}
+
+#content form{
+    width: 80%;
+    margin: 0 auto;
+    padding: 5% 10%;
+}
+#content form .sezione{
+    color: #FFFF66;
+}
+#content form .sezione .options{
+    color: #e3e3e3;
+}
+
+#studium_image{
+    margin-top:5%;
+    width: 70px;
+    height: 70px;
+}
+
+#content .title{
+    display: flex;
+    background-color: #0078BD;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin:5%;
+    border-radius: 18px;
+}
+#content .title p{
+    font-size: 18px;
+    text-align: center;
+}
+
+#content h1{
+    display: block;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    color: #FFC107;
+}
+
+@media (max-width: 1100px) {
+    #content {
+      width: 100%;
+    }
+}
+  
+#studiumimage{
+    width:50px;
+    height:50px;
+    margin-left: 5px;
+}
+
+
+.clear{
+    clear: both;
+    line-height: 0px;
+    height: 0;
+}
+
+#footer{
+    position: relative;
+    bottom:0px;
+    display:flex;
+    margin: auto;
+    background-color: #0078BD;;
+    color:black;
+    justify-content: space-between;
+    align-items:end;
+    font-family: roboto-flex,sans-serif;
+    height: 80px;
+}
+
+@media (max-width: 1100px) {
+    #footer {
+      height:100px;
+    }
+}
+
+input{
+    width: 100%;
+    height: 40px;
+    padding: 6px 12px;
+    border: 1px solid #d9dadc;
+    margin-top: 5px;
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .name, .surname, .username, .email, .type, .gender ,.password, .confirm_password, .profile_pic, .fileupload{
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.options{
+    display: flex;
+    justify-content: left;
+    width: 100%;
+}
+
+.options input{
+    width: 20px;
+    height: 20px;
+    aspect-ratio: 1 / 1;
+    margin-right: 5%;
+}
+
+.options label{
+    display: flex;
+    font-size: 18px;
+    font-weight: normal;
+    align-items: center;
+}
+
+@media(max-width: 1100px){
+    input{
+        height:30px;
+    }
+
+}
+
+.allow{
+    display: flex;
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.allow input{
+    width: 20px;
+    height: 20px;
+}
+
+.allow label{
+    margin-top: 4px;
+    margin-left: 10px;
+}
+
+form img{
+    opacity: 0;
+    width: 10px;
+    margin-right: 10px;
+}
+
+form span {
+    opacity: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    transition: opacity 0.3s ease;
+}
+
+.errorj label {
+    color: #d01b2d;
+}
+
+.errorj span {
+    opacity: 1;
+    font-size: 14px;
+    color: #d01b2d;
+}
+
+.errorj img {
+    opacity: 1;
+}
+
+.errorj input, .errorj #upload {
+    border-color: #d01b2d;
+}
+
+.submit input{
+    margin-top: 30px;
+    border-radius: 50px;
+    padding: 16px 14px 18px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: 2px;
+    color: #fff;
+    background-color: #10142d;
+    transition-property: background-color;
+    transition-duration: .3s;
+}
+
+.submit input:hover{
+    cursor: pointer;
+    background-color: #3948ab;
+}
+
+.signup{
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}

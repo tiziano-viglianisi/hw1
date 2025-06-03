@@ -1,0 +1,363 @@
+html{
+    color: #424242;
+    font-family: "roboto-flex",sans-serif;
+    font-size: 12px;
+}
+
+@media (max-width: 1100px) {
+    html {
+      font-size:10px;
+    }
+}  
+
+
+body{
+    margin:0;
+    padding:0;
+    background-color:#efefef;
+}
+
+
+.hidden{
+    display: none !important;
+}
+
+#wrapper{
+    height: auto;
+    min-height: 100%;
+    background-color: #0078BD;
+}
+
+#header{
+    display:flex;
+    justify-content: space-between;
+    background-image: radial-gradient(circle at left, #4e9bc7, #0078BD, #FFFF66, #4e9bc7);
+    font-family: "roboto-flex",sans-serif;
+    font-size: 12px;
+    height: 96px;
+    width: 100%;
+}
+
+#menuutente{
+    display: flex;
+    align-items: center; 
+    justify-content: left;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 150%;
+    font-weight: bold;
+    color: #FFFF66;
+    height: 92%;
+    width:75%;
+}
+
+.facoltadivstyle{
+    color: #FFFF66;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: #4e9bc7;
+    text-shadow: none;
+    padding: 2%;
+    margin: auto;
+}
+
+.flexcontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.userbuttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100%;
+    text-align: center;
+    height: 95%;
+    border-left: 1px solid #FFFF66;
+    padding-left: 1%;
+    padding-right:1%;
+    text-decoration: none;
+}
+
+.userbuttons:visited {
+    color: inherit;
+}
+
+#logout {
+    display: flex;
+    align-items: center; 
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 150%;
+    font-weight: bold;
+    color: white;
+    height: 100%;
+    width:10%;
+}
+
+#scrittalogout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    font-size: 100%;
+    text-align: center;
+    color: #FFFF66
+}
+
+
+#home{
+    display:flex;
+    width: 15%;
+    height:100%;
+    text-decoration: none;
+    color: black;
+}
+
+@media (max-width: 1100px) {
+    #home
+    {
+        width:25%;
+    }
+}
+  
+  #loghino{
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 80px;
+    height: 80px;
+    margin-left: 5px;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    background-color: #b8e3f0;
+    border: 4px solid white;
+    text-align: center;
+  }
+
+#logone{
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    border: 4px solid white;
+    font-family: "coolvetica", sans-serif;
+    font-size: 15px;
+    border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#banner{
+    display: flex;
+    justify-content:space-between;
+    height: 140px;
+    margin: auto;
+    background-color: white;
+}
+#studiumlogo{
+    font-weight: normal;
+}
+
+@media (max-width: 1100px) {
+    #banner {
+        height:70px;  
+    }
+  }
+  
+#img1{
+    width: 20%;
+}
+
+
+#main{
+    background-image: url("img/Ingegneria Edificio didattica 03.jpg");
+    width:100%;
+}
+
+#content{
+    display:flex;
+    flex-direction: column;
+    min-height: 1100px;
+    width: 35%;
+    align-items: center;
+    margin:auto;
+    padding: 2%;
+    border: 10px solid #0078BD;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: #fff;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.dipartimenti_nav{
+    min-height: 100%;
+    min-width: 100%;
+    font-size: 150%;
+    font-weight: bold;
+    color: #ecf0f1;
+    background-color: #0078BD;
+    padding:30px 0px;
+    border-radius: 24px;
+}
+
+.dipartimenti_nav h2{
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1100px) {
+    .dipartimenti_nav {
+      border-radius: 0px;
+    }
+}
+
+
+@media (max-width: 1100px) {
+    #content {
+      width: 100%;
+      border:none;
+      border-radius: 0px;
+      padding:0px;
+    }
+}
+
+.titolo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #0078BD;
+    color: #FFFF66;
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 24px;
+}
+
+@media (max-width: 1100px) {
+    .titolo {
+      border-radius: 0px;
+    }
+}
+
+.titolo img{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+
+#content strong{
+    font-size: 2em;
+    font-weight: bold;
+    color: #FFFF66;
+    padding:10px;
+    display: flex;
+    justify-content: center;
+}
+
+#content h1{
+    font-size: 3em;
+    font-weight: bold;
+    color: #FFC107;
+    margin: 0;
+    padding: 10px;
+    
+}
+
+
+#content h2{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #1ABC9C;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.preferiti{
+    cursor: pointer;
+}
+
+.corsi div{
+    margin-bottom: 10px;
+}
+
+.clear{
+    clear: both;
+    line-height: 0px;
+    height: 0;
+}
+
+#footer{
+    position: relative;
+    bottom:0px;
+    display:flex;
+    margin: auto;
+    background-color: #0078BD;;
+    color:black;
+    justify-content: space-between;
+    align-items:end;
+    font-family: roboto-flex,sans-serif;
+    height: 80px;
+}
+
+
+@media (max-width: 1100px) {
+    #footer {
+      height:100px;
+    }
+}
+
+.propic{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: 2px solid #FFFF66;
+    background-color: #FFFF66;
+    margin-left: 10px;
+}
+
+#profiliutente{
+    margin-left:auto;
+}
+
+
+@media (max-width: 1100px) {
+    #loghino
+    {
+        border-radius: 50%;
+    }
+}
+@media (max-width: 1100px) {
+    #scrittaprofilo {
+        display: none;
+    }
+}
+
+@media (max-width: 1100px) {
+    #scrittalogout {
+        display: none;
+    }
+}
+
+@media (max-width: 1100px) {
+    #logone
+    {
+        display: none;
+    }
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+.facolta h2{
+    cursor: pointer;
+}

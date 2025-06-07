@@ -6,7 +6,17 @@
         $query= "SELECT * FROM utenti WHERE username = '$username'";
         $result = mysqli_query($conn, $query);
         $row = mysqli_fetch_assoc($result);
-        echo json_encode($row);
+        $libro_query = "SELECT titolo,autore,cover FROM libro_preferito WHERE utente=(SELECT id FROM utenti WHERE username = '".$username."')";
+        $libro_result = mysqli_query($conn, $libro_query);
+        $row2= mysqli_fetch_assoc($libro_result);
+        if($row2) {
+            $row3 = array_merge((array)$row, $row2);
+            echo json_encode($row3);
+        }
+        else {
+            echo json_encode($row);
+        }
+
         mysqli_close($conn);
     }
 

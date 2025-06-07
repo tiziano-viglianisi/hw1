@@ -87,6 +87,17 @@
                         <p class=catagories>Username:</p><p class=datiutente id=username></p><br>
                         <p class=catagories>Email:</p><p class=datiutente id=email></p><br>
                         <p class=catagories>Tipologia:</p><p class=datiutente id=tipo></p><br>
+                        <p class=catagories>Libro Preferito:</p><br>
+                        <div id=libro>
+                            <img class="datiutente hidden" id=cover><br>
+                            <p class=datiutente id=titolo></p><br>
+                            <p class=datiutente id=autore></p><br>
+                            <div class="hidden" id=rimuovilibro>
+                                <img class="hidden" id="removelibro" src="./img/cross.png"><br>
+                                Rimuovi Libro Preferito
+                            </div>
+                        </div><br>
+
                         <p class=catagories>Foto Profilo:</p><br><p><img class=propic id=propicinterna src=./uploads/ alt="Foto Profilo"></p>
                         <img id=edit src=./img/edit.png>
                         <form class="upload_propic hidden" method="post" enctype="multipart/form-data" style="margin-top:10px;">

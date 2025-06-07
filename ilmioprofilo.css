@@ -385,3 +385,22 @@ body{
 html, body {
   overflow-x: hidden;
 }
+
+
+#libro{
+    font-size:0.7em !important;
+}
+
+#cover{
+    width: 150px;
+    height: 200px;
+}
+
+#removelibro{
+    cursor: pointer;
+
+}
+#rimuovilibro{
+    color: #8C1A10;
+    font-weight: bold;
+}

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Giu 03, 2025 alle 12:30
+-- Creato il: Giu 07, 2025 alle 13:15
 -- Versione del server: 10.4.32-MariaDB
 -- Versione PHP: 8.2.12
 
@@ -419,6 +419,26 @@ INSERT INTO `facolta` (`id`, `codice_facolta`, `nome`, `dipartimento_id`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struttura della tabella `libro_preferito`
+--
+
+CREATE TABLE `libro_preferito` (
+  `titolo` varchar(255) DEFAULT NULL,
+  `autore` varchar(255) DEFAULT NULL,
+  `utente` int(11) NOT NULL,
+  `cover` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dump dei dati per la tabella `libro_preferito`
+--
+
+INSERT INTO `libro_preferito` (`titolo`, `autore`, `utente`, `cover`) VALUES
+('Autobiography', 'Benjamin Franklin', 16, 'https://covers.openlibrary.org/b/id/5647361-L.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Struttura della tabella `preferenze_corsi`
 --
 
@@ -442,8 +462,6 @@ INSERT INTO `preferenze_corsi` (`id`, `utente_id`, `corso_id`, `anno_accademico`
 (54, 10, 30, '2024'),
 (60, 10, 1, '2024'),
 (61, 10, 2, '2024'),
-(65, 16, 6, '2025'),
-(66, 16, 8, '2025'),
 (67, 16, 29, '2025'),
 (68, 16, 28, '2025'),
 (75, 16, 16, '2025'),
@@ -451,17 +469,13 @@ INSERT INTO `preferenze_corsi` (`id`, `utente_id`, `corso_id`, `anno_accademico`
 (77, 16, 15, '2025'),
 (80, 16, 13, '2025'),
 (83, 16, 7, '2025'),
-(84, 16, 4, '2025'),
-(85, 16, 1, '2025'),
 (86, 16, 2, '2025'),
-(87, 16, 5, '2025'),
 (88, 16, 3, '2025'),
 (89, 16, 18, '2025'),
 (90, 16, 17, '2025'),
 (91, 16, 19, '2025'),
 (92, 16, 20, '2025'),
 (93, 16, 21, '2025'),
-(94, 16, 23, '2025'),
 (95, 16, 22, '2025');
 
 -- --------------------------------------------------------
@@ -479,7 +493,7 @@ CREATE TABLE `utenti` (
   `tipo` varchar(255) DEFAULT NULL,
   `genere` char(1) DEFAULT NULL,
   `pass` varchar(255) DEFAULT NULL,
-  `profile_pic` mediumblob DEFAULT NULL
+  `profile_pic` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -490,13 +504,13 @@ INSERT INTO `utenti` (`id`, `username`, `nome`, `cognome`, `email`, `tipo`, `gen
 (7, 'tiza', 'Tiziano', 'Viglianisi', 'tviglianii@gmail.com', 'studente', 'M', '$2y$10$sawPQpVLKTTzwt2cK4wSBONz1g7UXIv93RDNiogVcz2mn6.IE4y3K', NULL),
 (8, 'tokzo', 'Tiziano', 'Viglianisi', 'tviglianiasi@gmail.com', 'studente', 'M', '$2y$10$5M.2.cCHV/z64m3OypOxYOjz51m/EMIgDiQs.zSK2vS.cZf/8TJHy', NULL),
 (9, 'tizaijdf', 'Tiziano', 'Viglianisi', 'tviglianasdisi@gmail.com', 'studente', 'M', '$2y$10$.Ii1NLbHs5dyyUUYKwpA8e0EL8Nv3UgaUWQ5648JtiGfNuBEEjav2', NULL),
-(10, 'simome', 'Simone', 'Messina', 'simo@example.com', 'professore', 'F', '$2y$10$dN9TyzevCd5Xw.ucfkop6eAPdJ7JT/Vv1WdbFuxhAinZqs5XRgLRC', 0x363833373531316238306233352e706e67),
-(13, 't', 'Tiziano', 'Viglianisi', 'tviglianisi@gmail.com', 'studente', 'M', '$2y$10$ylul58TG/zyIqZ35s8h35uC6AgNhQIjzFIkcDovsuN437HBAhRPoi', 0x363833373335353838616634622e706e67),
-(14, 'ty', 'Tiziano', 'Viglianisi', 'tviglyianisi@gmail.com', 'studente', 'M', '$2y$10$hSe.vM.M99muUsWk1b0uqeXsBDy7xVXOwOD7iYjhMaxYwPUlQ4muK', 0x363833373336303634623236302e706e67),
+(10, 'simome', 'Simone', 'Messina', 'simo@example.com', 'professore', 'F', '$2y$10$dN9TyzevCd5Xw.ucfkop6eAPdJ7JT/Vv1WdbFuxhAinZqs5XRgLRC', '6837511b80b35.png'),
+(13, 't', 'Tiziano', 'Viglianisi', 'tviglianisi@gmail.com', 'studente', 'M', '$2y$10$ylul58TG/zyIqZ35s8h35uC6AgNhQIjzFIkcDovsuN437HBAhRPoi', '683735588af4b.png'),
+(14, 'ty', 'Tiziano', 'Viglianisi', 'tviglyianisi@gmail.com', 'studente', 'M', '$2y$10$hSe.vM.M99muUsWk1b0uqeXsBDy7xVXOwOD7iYjhMaxYwPUlQ4muK', '683736064b260.png'),
 (15, 'sad', 'Tiziano', 'Viglianisi', 'tviglianisi@gmadail.com', 'studente', 'M', '$2y$10$NxW8M5ySQFDOIk.cBwhI2.0VahUoxbyR3DQPl07GX3QpoWAPPO3w2', ''),
-(16, 'tiz', 'Tiziano', 'Viglianisi', 'tiz@example.com', 'professore', 'A', '$2y$10$kjvwteQ8YJ.LXkjH9o94Suf8CnA/iS7S3pvWSoqOL423Rkt8n97WG', 0x363833656365346135346366342e706e67),
-(17, 'sd', 'Tiziano', 'Viglianisi', 'asdi@gmail.com', 'studente', 'M', '$2y$10$/HDE/vCbmGdAew4Jnjo7tuNCQCnTbn4uIT1GJlTp3Z8d3Q9B7d31i', 0x363833373533616362396363372e6a7067),
-(18, 'pollo', 'Tiziano', 'Viglianisi', 't@example.com', 'professore', 'F', '$2y$10$Oy5cAipxoD6Ij9cD2wjXG..22Hjb8T0jgXQv.veYI26MW.yRp7CP6', 0x363833616138383265666364662e706e67);
+(16, 'tiz', 'Tiziano', 'Viglianisi', 'tiz@example.com', 'professore', 'A', '$2y$10$kjvwteQ8YJ.LXkjH9o94Suf8CnA/iS7S3pvWSoqOL423Rkt8n97WG', '683ece4a54cf4.png'),
+(17, 'sd', 'Tiziano', 'Viglianisi', 'asdi@gmail.com', 'studente', 'M', '$2y$10$/HDE/vCbmGdAew4Jnjo7tuNCQCnTbn4uIT1GJlTp3Z8d3Q9B7d31i', '683753acb9cc7.jpg'),
+(18, 'pollo', 'Tiziano', 'Viglianisi', 't@example.com', 'professore', 'F', '$2y$10$Oy5cAipxoD6Ij9cD2wjXG..22Hjb8T0jgXQv.veYI26MW.yRp7CP6', '683aa882efcdf.png');
 
 --
 -- Indici per le tabelle scaricate
@@ -521,6 +535,13 @@ ALTER TABLE `dipartimenti`
 ALTER TABLE `facolta`
   ADD PRIMARY KEY (`id`),
   ADD KEY `dipartimento_id` (`dipartimento_id`);
+
+--
+-- Indici per le tabelle `libro_preferito`
+--
+ALTER TABLE `libro_preferito`
+  ADD PRIMARY KEY (`utente`),
+  ADD KEY `utente` (`utente`);
 
 --
 -- Indici per le tabelle `preferenze_corsi`
@@ -562,7 +583,7 @@ ALTER TABLE `facolta`
 -- AUTO_INCREMENT per la tabella `preferenze_corsi`
 --
 ALTER TABLE `preferenze_corsi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- AUTO_INCREMENT per la tabella `utenti`
@@ -585,6 +606,12 @@ ALTER TABLE `corsi`
 --
 ALTER TABLE `facolta`
   ADD CONSTRAINT `facolta_ibfk_1` FOREIGN KEY (`dipartimento_id`) REFERENCES `dipartimenti` (`id`) ON DELETE CASCADE;
+
+--
+-- Limiti per la tabella `libro_preferito`
+--
+ALTER TABLE `libro_preferito`
+  ADD CONSTRAINT `FK__utenti` FOREIGN KEY (`utente`) REFERENCES `utenti` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limiti per la tabella `preferenze_corsi`

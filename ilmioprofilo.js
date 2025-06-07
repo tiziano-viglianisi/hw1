@@ -30,6 +30,7 @@ fetch('getprofilepic.php').then(onresponse).then(onjsonprofilepic);
 
 fetch('getmyprofile.php').then(onresponse).then(onjsonprofile);
 
+
 function onjsonprofile(json) {
     const nome= json.nome;
     const cognome= json.cognome;
@@ -41,12 +42,47 @@ function onjsonprofile(json) {
     for (const dato of datiutente) {
         for (const elemento in json) {
             if (dato.id === elemento) {
+                if (elemento === "cover") {
+                    dato.src=json[elemento];
+                    if(dato.classList.contains("hidden")) {
+                        dato.classList.remove("hidden");
+                    }
+                    remove= document.querySelector("#removelibro");
+                    if(remove.classList.contains("hidden")) {
+                        remove.classList.remove("hidden");
+                    }
+                    remove.addEventListener("click",rimuoviLibro);
+                    rimuoviDiv=document.querySelector("#rimuovilibro");
+                    if (rimuoviDiv.classList.contains("hidden")) {
+                        rimuoviDiv.classList.remove("hidden");
+                    }
+                    continue;
+                }
                 dato.textContent = json[elemento];
             }
         }
     }
     propicinterna.src= "./uploads/" + json.profile_pic;
 
+}
+
+function rimuoviLibro(event) {
+    const removeButton = event.currentTarget;
+    const cover = document.querySelector("#cover");
+    const libroDiv = removeButton.closest("#libro");
+    titolo= libroDiv.querySelector("#titolo");
+    autore= libroDiv.querySelector("#autore");
+    cover.src = "";
+    cover.classList.add("hidden");
+    removeButton.classList.add("hidden");
+    
+    fetch(`removefavoritelibro.php?title=${encodeURIComponent(titolo.textContent)}&author=${encodeURIComponent(autore.textContent)}`)
+    autore.textContent = "";
+    titolo.textContent = "";
+    rimuoviDiv=libroDiv.querySelector("#rimuovilibro");
+    if (rimuoviDiv) {
+        rimuoviDiv.classList.add("hidden");
+    }
 }
 
 const edit = document.querySelector("#edit");

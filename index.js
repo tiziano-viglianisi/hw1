@@ -134,7 +134,12 @@ function onjsonlibri(json) {
             libroDiv.appendChild(bookInfo);
             bookInfo.appendChild(bookTitle);
             bookInfo.appendChild(bookAuthor);
-
+            const prefIcon = document.createElement("img");
+            prefIcon.classList.add("pref", "book_pref_icon");
+            libroDiv.appendChild(prefIcon);
+            fetch(`checklibropreferito.php?title=${encodeURIComponent(bookTitle.textContent)}&author=${encodeURIComponent(bookAuthor.textContent)}`)
+                .then(onresponse)
+                .then(onjsonlibropref(prefIcon));
         }
     } else {
         const noResults = document.createElement("div");
@@ -144,6 +149,68 @@ function onjsonlibri(json) {
     }
 }
 
+function onjsonlibropref(prefIcon) {
+    return function(json) {
+        onjsonchecklibropref(json, prefIcon);  
+    }
+}
+
+function onjsonchecklibropref(json, prefIcon) {
+    if (json.success === "true" && json.favorite === "true") {
+        prefIcon.src = "img/pref2.png";
+        prefIcon.addEventListener("click", removefavoriteLibro);
+    } else if (json.success === "true" && json.favorite === "false") {
+        prefIcon.src = "img/pref.png";
+        prefIcon.addEventListener("click", addfavoriteLibro);
+    } else {
+    prefIcon.classList.add("hidden");
+    }
+}
+
+function addfavoriteLibro(event) {
+    const prefIcon = event.currentTarget;
+    prefIcon.removeEventListener("click", addfavoriteLibro);
+    const libroDiv = prefIcon.closest('.book');
+    fetch(`addfavoritelibro.php?title=${encodeURIComponent(libroDiv.querySelector(".book_title").textContent)}&author=${encodeURIComponent(libroDiv.querySelector(".book_author").textContent)}&cover=${encodeURIComponent(libroDiv.querySelector(".book_cover").src)}`)
+        .then(onresponse)
+        .then(onjsonaggiuntalibroprefpass(prefIcon));
+}
+
+function onjsonaggiuntalibroprefpass(prefIcon) {
+    return function(json) {
+        onjsonaggiuntaibropref(json, prefIcon);
+    }
+}
+
+function onjsonaggiuntaibropref(json, prefIcon) {
+    if (json.success === "true") {
+        prefIcon.src = "img/pref2.png";
+        prefIcon.addEventListener("click", removefavoriteLibro);
+    }
+    if (json.success === "false") {
+        erroreDiv= document.createElement("div");
+        erroreDiv.textContent = "Hai già un libro preferito";
+        erroreDiv.classList.add("erroreaggiuntalibri");
+        content= document.querySelector("#content_with_menu");
+        content.appendChild(erroreDiv);
+        setTimeout(timeout, 5000);
+        prefIcon.addEventListener("click", addfavoriteLibro);
+    }
+}
+
+function timeout() {
+    const erroreDiv = document.querySelector(".erroreaggiuntalibri");
+    erroreDiv.remove();
+}
+
+function removefavoriteLibro(event) {
+    const prefIcon = event.currentTarget;
+    const libroDiv = prefIcon.closest('.book');
+    fetch(`removefavoritelibro.php?title=${encodeURIComponent(libroDiv.querySelector(".book_title").textContent)}&author=${encodeURIComponent(libroDiv.querySelector(".book_author").textContent)}`);
+    prefIcon.removeEventListener("click", removefavoriteLibro);
+    prefIcon.src = "img/pref.png";
+    prefIcon.addEventListener("click", addfavoriteLibro);
+}
 
 function browsedipartimenti(event) {
     const dipartimenti = document.querySelector("#dipartimenti");
@@ -463,22 +530,34 @@ function onjsonlibriiniziali(json){
     for (let i = 0; i < num_res; i++) {
         const libro = json.works[i];
         const libroDiv = document.createElement("div");
+        const libroInfo= document.createElement("div");
         const libroAuthor = document.createElement("p");
         const libroTitle = document.createElement("h3");
         const libroCover = document.createElement("img");
 
+        libroDiv.classList.add("book");
         libroDiv.classList.add("listl1");
         libroAuthor.classList.add("book_author");
         libroTitle.classList.add("book_title");
-        libroAuthor.textContent = "Autore: " + libro.authors[0].name;
+        libroInfo.classList.add("book_info");
+        libroAuthor.textContent = libro.authors[0].name;
         libroTitle.textContent = libro.title;
         libroCover.classList.add("book_cover");
 
         libroCover.src = "https://covers.openlibrary.org/b/id/" + libro.cover_id + "-L.jpg";
         librobox.appendChild(libroDiv);
         libroDiv.appendChild(libroCover);
-        libroDiv.appendChild(libroTitle);
-        libroDiv.appendChild(libroAuthor);
+        libroDiv.appendChild(libroInfo);        
+        libroInfo.appendChild(libroTitle);
+        libroInfo.appendChild(libroAuthor);
+
+
+        const prefIcon = document.createElement("img");
+        prefIcon.classList.add("pref", "book_pref_icon");
+        libroDiv.appendChild(prefIcon);
+        fetch(`checklibropreferito.php?title=${encodeURIComponent(libroTitle.textContent)}&author=${encodeURIComponent(libroAuthor.textContent)}`)
+            .then(onresponse)
+            .then(onjsonlibropref(prefIcon));
     }
 }
 

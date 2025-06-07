@@ -726,3 +726,20 @@ body, html {
     color: #eaeaea;
     text-shadow: 2px 2px 2px #000000;
 }
+
+.erroreaggiuntalibri{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0px;
+    font-size: 1.5em;
+    background-color: red;
+    width: 50%;
+    height: 70px;
+}

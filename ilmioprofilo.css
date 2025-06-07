@@ -6,7 +6,8 @@ html{
 
 @media (max-width: 1100px) {
     html {
-      font-size:10px;
+        font-size:10px;
+        overflow: hidden;
     }
 }  
 
@@ -227,7 +228,10 @@ body{
 
 @media (max-width: 1100px) {
     .dipartimenti_nav {
-      border-radius: 0px;
+        border-radius: 0px;
+        font-size: 120%;
+        padding: 3%;
+        min-width: 95%;
     }
 }
 
@@ -243,6 +247,7 @@ body{
 @media (max-width: 1100px) {
     .titolo {
       border-radius: 0px !important;
+      font-size: 0.8em;
     }
 }
 
@@ -388,19 +393,51 @@ html, body {
 
 
 #libro{
-    font-size:0.7em !important;
+    font-size:0.7em;
+}
+
+@media (max-width: 1100px) {
+    #libro
+    {
+        font-size:0.8em;
+    }
 }
 
 #cover{
     width: 150px;
     height: 200px;
 }
+@media (max-width: 1100px) {
+    #cover
+    {
+        width: 80px;
+        height: 100px;
+    }
+}
+
+
 
 #removelibro{
     cursor: pointer;
 
 }
+
+@media (max-width: 1100px) {
+    #removelibro
+    {
+        width: 20px;
+        height: 20px;
+    }
+}
 #rimuovilibro{
     color: #8C1A10;
     font-weight: bold;
+}
+
+@media (max-width: 1100px) {
+    #fotoprofilogroup .propic
+    {
+        width: 60px;
+        height: 60px;
+    }
 }

@@ -97,14 +97,15 @@
                                 Rimuovi Libro Preferito
                             </div>
                         </div><br>
-
-                        <p class=catagories>Foto Profilo:</p><br><p><img class=propic id=propicinterna src=./uploads/ alt="Foto Profilo"></p>
-                        <img id=edit src=./img/edit.png>
-                        <form class="upload_propic hidden" method="post" enctype="multipart/form-data" style="margin-top:10px;">
-                            <label class=catagories for="profile_pic">Cambia foto profilo:</label><br>
-                            <input type="file" name="profile_pic" id="profile_pic" accept="image/*" required>
-                            <button id=cambia type="submit">Cambia</button>
-                        </form>
+                        <div id=fotoprofilogroup>
+                            <p class=catagories>Foto Profilo:</p><br><p><img class=propic id=propicinterna src=./uploads/ alt="Foto Profilo"></p>
+                            <img id=edit src=./img/edit.png>
+                            <form class="upload_propic hidden" method="post" enctype="multipart/form-data" style="margin-top:10px;">
+                                <label class=catagories for="profile_pic">Cambia foto profilo:</label><br>
+                                <input type="file" name="profile_pic" id="profile_pic" accept="image/*" required>
+                                <button id=cambia type="submit">Cambia</button>
+                            </form>
+                        </div>
                 </div>
             </div>
             <div class="clear">&nbsp;</div>

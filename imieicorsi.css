@@ -2,11 +2,13 @@ html{
     color: #424242;
     font-family: "roboto-flex",sans-serif;
     font-size: 12px;
+    
 }
 
 @media (max-width: 1100px) {
     html {
-      font-size:10px;
+        font-size:10px;
+        overflow: hidden;
     }
 }  
 
@@ -212,7 +214,8 @@ body{
 
 @media (max-width: 1100px) {
     .dipartimenti_nav {
-      border-radius: 0px;
+        border-radius: 0px;
+        font-size: 120%;
     }
 }
 
@@ -241,7 +244,8 @@ body{
 
 @media (max-width: 1100px) {
     .titolo {
-      border-radius: 0px;
+        border-radius: 0px;
+        font-size: 0.8em;
     }
 }
 
@@ -281,12 +285,24 @@ body{
     justify-content: center;
 }
 
+@media (max-width: 1100px) {
+    #content h2 {
+        padding: 5px;
+    }
+}
+
 .preferiti{
     cursor: pointer;
 }
 
 .corsi div{
     margin-bottom: 10px;
+}
+
+@media (max-width: 1100px) {
+    .corsi div {
+        margin-bottom: 5px;
+    }
 }
 
 .clear{

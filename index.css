@@ -726,6 +726,12 @@ body, html {
     color: #eaeaea;
     text-shadow: 2px 2px 2px #000000;
 }
+@media (max-width: 1100px) {
+    .listl1 .book_cover{
+        height: 100px;
+        width: 100px;
+    }
+}
 
 .erroreaggiuntalibri{
     display: flex;
